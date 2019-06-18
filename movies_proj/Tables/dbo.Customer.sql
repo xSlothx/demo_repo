@@ -16,12 +16,12 @@ CREATE TABLE [dbo].[Customer] (
 		CONSTRAINT [Customer_UK]
 		UNIQUE
 		NONCLUSTERED
-		()
+		([FirstName], [LastName], [Phone])
 		ON [PRIMARY],
 		CONSTRAINT [Customer_PK]
 		PRIMARY KEY
 		CLUSTERED
-		()
+		([CustomerId])
 	ON [PRIMARY]
 )
 GO
@@ -44,15 +44,15 @@ ALTER TABLE [dbo].[Customer]
 CHECK CONSTRAINT [CK__Customer__Custom__25869641]
 GO
 CREATE NONCLUSTERED INDEX [Customer_IE1]
-	ON [dbo].[Customer]
+	ON [dbo].[Customer] ([LastName])
 	ON [PRIMARY]
 GO
 CREATE NONCLUSTERED INDEX [Customer_IE2]
-	ON [dbo].[Customer]
+	ON [dbo].[Customer] ([Phone])
 	ON [PRIMARY]
 GO
 CREATE NONCLUSTERED INDEX [Customer_IE3]
-	ON [dbo].[Customer]
+	ON [dbo].[Customer] ([Zip])
 	ON [PRIMARY]
 GO
 ALTER TABLE [dbo].[Customer] SET (LOCK_ESCALATION = TABLE)
