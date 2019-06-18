@@ -1,8 +1,7 @@
 <DatabaseSettings>
-  <Collation>
-  </Collation>
+  <Collation>SQL_Latin1_General_CP1_CI_AS</Collation>
   <ServerVersion>Sql2016</ServerVersion>
   <ServerName>WINDOWS10PRO64</ServerName>
   <DatabaseName>mathew_dev</DatabaseName>
-  <DatabaseInformation Version="1" />
+  <DatabaseInformation Version="2" />
 </DatabaseSettings>
