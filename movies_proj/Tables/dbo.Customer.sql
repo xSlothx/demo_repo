@@ -4,7 +4,7 @@ SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[Customer] (
 		[CustomerId]     [int] NOT NULL,
-		[FirstName]      [varchar](60) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+		[FirstName]      [varchar](100) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
 		[LastName]       [varchar](30) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
 		[Phone]          [char](10) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
 		[Address]        [varchar](40) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
@@ -16,12 +16,12 @@ CREATE TABLE [dbo].[Customer] (
 		CONSTRAINT [Customer_UK]
 		UNIQUE
 		NONCLUSTERED
-		([FirstName], [LastName], [Phone])
+		()
 		ON [PRIMARY],
 		CONSTRAINT [Customer_PK]
 		PRIMARY KEY
 		CLUSTERED
-		([CustomerId])
+		()
 	ON [PRIMARY]
 )
 GO
@@ -44,15 +44,15 @@ ALTER TABLE [dbo].[Customer]
 CHECK CONSTRAINT [CK__Customer__Custom__25869641]
 GO
 CREATE NONCLUSTERED INDEX [Customer_IE1]
-	ON [dbo].[Customer] ([LastName])
+	ON [dbo].[Customer]
 	ON [PRIMARY]
 GO
 CREATE NONCLUSTERED INDEX [Customer_IE2]
-	ON [dbo].[Customer] ([Phone])
+	ON [dbo].[Customer]
 	ON [PRIMARY]
 GO
 CREATE NONCLUSTERED INDEX [Customer_IE3]
-	ON [dbo].[Customer] ([Zip])
+	ON [dbo].[Customer]
 	ON [PRIMARY]
 GO
 ALTER TABLE [dbo].[Customer] SET (LOCK_ESCALATION = TABLE)
