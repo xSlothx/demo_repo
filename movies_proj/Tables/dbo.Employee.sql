@@ -12,19 +12,9 @@ CREATE TABLE [dbo].[Employee] (
 		[City]           [varchar](30) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
 		[State]          [char](2) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
 		[Zip]            [char](5) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
-		[BirthDate]      [date] NULL,
+		[BirthDate]      [date] NOT NULL,
 		[Gender]         [char](1) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 		[HireDate]       [date] NULL,
-		CONSTRAINT [Employee_UK1]
-		UNIQUE
-		NONCLUSTERED
-		([FirstName], [LastName], [Phone])
-		ON [PRIMARY],
-		CONSTRAINT [Employee_UK2]
-		UNIQUE
-		NONCLUSTERED
-		([SSN])
-		ON [PRIMARY],
 		CONSTRAINT [Employee_PK]
 		PRIMARY KEY
 		CLUSTERED
@@ -49,18 +39,6 @@ ALTER TABLE [dbo].[Employee]
 GO
 ALTER TABLE [dbo].[Employee]
 CHECK CONSTRAINT [CK__Employee__Gender__2B3F6F97]
-GO
-CREATE NONCLUSTERED INDEX [Employee_IE1]
-	ON [dbo].[Employee] ([LastName])
-	ON [PRIMARY]
-GO
-CREATE NONCLUSTERED INDEX [Employee_IE2]
-	ON [dbo].[Employee] ([Phone])
-	ON [PRIMARY]
-GO
-CREATE NONCLUSTERED INDEX [Employee_IE3]
-	ON [dbo].[Employee] ([Zip])
-	ON [PRIMARY]
 GO
 ALTER TABLE [dbo].[Employee] SET (LOCK_ESCALATION = TABLE)
 GO
