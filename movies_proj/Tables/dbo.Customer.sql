@@ -4,7 +4,7 @@ SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[Customer] (
 		[CustomerId]     [int] NOT NULL,
-		[FirstName]      [varchar](200) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+		[FirstName]      [varchar](250) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
 		[LastName]       [varchar](30) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
 		[Phone]          [char](10) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
 		[Address]        [varchar](40) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
@@ -53,6 +53,10 @@ CREATE NONCLUSTERED INDEX [Customer_IE2]
 GO
 CREATE NONCLUSTERED INDEX [Customer_IE3]
 	ON [dbo].[Customer] ([Zip])
+	ON [PRIMARY]
+GO
+CREATE NONCLUSTERED INDEX [idx_Nonclustered_Customer_CustomerId]
+	ON [dbo].[Customer] ([CustomerId])
 	ON [PRIMARY]
 GO
 ALTER TABLE [dbo].[Customer] SET (LOCK_ESCALATION = TABLE)
