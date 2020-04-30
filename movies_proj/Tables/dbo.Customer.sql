@@ -4,7 +4,7 @@ SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[Customer] (
 		[CustomerId]     [int] NOT NULL,
-		[FirstName]      [varchar](500) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+		[FirstName]      [varchar](60) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
 		[LastName]       [varchar](30) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
 		[Phone]          [char](10) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
 		[Address]        [varchar](40) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,

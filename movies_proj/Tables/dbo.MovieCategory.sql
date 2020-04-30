@@ -6,11 +6,6 @@ CREATE TABLE [dbo].[MovieCategory] (
 		[CategoryId]       [int] NOT NULL,
 		[CategoryName]     [varchar](20) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
 		[RentalPrice]      [money] NOT NULL,
-		CONSTRAINT [MovieCategory_UK]
-		UNIQUE
-		NONCLUSTERED
-		([CategoryName])
-		ON [PRIMARY],
 		CONSTRAINT [MovieCategory_PK]
 		PRIMARY KEY
 		CLUSTERED
