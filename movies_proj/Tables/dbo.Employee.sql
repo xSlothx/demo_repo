@@ -33,6 +33,7 @@ CREATE TABLE [dbo].[Employee] (
 )
 GO
 ALTER TABLE [dbo].[Employee]
+	WITH NOCHECK
 	ADD
 	CONSTRAINT [CK__Employee__Employ__2A4B4B5E]
 	CHECK
@@ -42,6 +43,7 @@ ALTER TABLE [dbo].[Employee]
 CHECK CONSTRAINT [CK__Employee__Employ__2A4B4B5E]
 GO
 ALTER TABLE [dbo].[Employee]
+	WITH NOCHECK
 	ADD
 	CONSTRAINT [CK__Employee__Gender__2B3F6F97]
 	CHECK
