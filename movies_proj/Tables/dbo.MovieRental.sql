@@ -53,7 +53,7 @@ ALTER TABLE [dbo].[MovieRental]
 CHECK CONSTRAINT [CK__MovieRent__Total__44FF419A]
 GO
 ALTER TABLE [dbo].[MovieRental]
-	WITH CHECK
+	WITH NOCHECK
 	ADD CONSTRAINT [MovieRental_FK2]
 	FOREIGN KEY ([EmployeeId]) REFERENCES [dbo].[Employee] ([EmployeeId])
 ALTER TABLE [dbo].[MovieRental]
