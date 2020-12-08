@@ -1,0 +1,6 @@
+CREATE ROLE [test1] AUTHORIZATION [dbo]
+GO
+
+ALTER ROLE [test1] ADD MEMBER [guest]
+
+GO
