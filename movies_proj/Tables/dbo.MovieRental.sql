@@ -1,4 +1,3 @@
--- update
 SET ANSI_NULLS ON
 SET QUOTED_IDENTIFIER ON
 SET ANSI_PADDING OFF
@@ -54,19 +53,19 @@ ALTER TABLE [dbo].[MovieRental]
 CHECK CONSTRAINT [CK__MovieRent__Total__44FF419A]
 GO
 ALTER TABLE [dbo].[MovieRental]
-	WITH NOCHECK
-	ADD CONSTRAINT [MovieRental_FK2]
-	FOREIGN KEY ([EmployeeId]) REFERENCES [dbo].[Employee] ([EmployeeId])
-ALTER TABLE [dbo].[MovieRental]
-	CHECK CONSTRAINT [MovieRental_FK2]
-
-GO
-ALTER TABLE [dbo].[MovieRental]
 	WITH CHECK
 	ADD CONSTRAINT [MovieRental_FK1]
 	FOREIGN KEY ([CustomerId]) REFERENCES [dbo].[Customer] ([CustomerId])
 ALTER TABLE [dbo].[MovieRental]
 	CHECK CONSTRAINT [MovieRental_FK1]
+
+GO
+ALTER TABLE [dbo].[MovieRental]
+	WITH NOCHECK
+	ADD CONSTRAINT [MovieRental_FK2]
+	FOREIGN KEY ([EmployeeId]) REFERENCES [dbo].[Employee] ([EmployeeId])
+ALTER TABLE [dbo].[MovieRental]
+	CHECK CONSTRAINT [MovieRental_FK2]
 
 GO
 CREATE NONCLUSTERED INDEX [MovieRental_IE1]
