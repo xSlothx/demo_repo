@@ -1,7 +1,0 @@
-CREATE SCHEMA [test2]
-	AUTHORIZATION [dbo]
-GO
-GRANT SELECT
-	ON SCHEMA::[test2]
-	TO [test2]
-GO
